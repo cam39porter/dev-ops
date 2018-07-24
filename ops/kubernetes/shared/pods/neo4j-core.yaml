@@ -20,7 +20,7 @@ spec:
           secretName: neo4j-cluster
       containers:
       - name: neo4j
-        image: "us.gcr.io/opit-193719/neo4j-image"
+        image: "gcr.io/opit-193719/neo4j-image:b14e90f0176a10c6c4c0ef401acd787e518cf926"
         imagePullPolicy: "Always"
         env:
           - name: NEO4J_dbms_mode
