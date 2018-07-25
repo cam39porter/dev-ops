@@ -20,6 +20,8 @@ readonly userid
 readonly groupid
 readonly exec_cmd
 
+cp /esmapping.json /var/lib/neo4j/conf/esmapping.json
+
 mkdir -p /var/lib/neo4j/certificates/cluster/trusted 
 mkdir -p /var/lib/neo4j/certificates/cluster/revoked
 cp /etc/neo4j/secrets/public.crt /var/lib/neo4j/certificates/cluster/trusted
@@ -169,14 +171,15 @@ unset NEO4J_dbms_txLog_rotation_retentionPolicy NEO4J_UDC_SOURCE \
 : ${NEO4J_com_graphaware_module_ES_2:=com.graphaware.module.es.ElasticSearchModuleBootstrapper}
 : ${NEO4J_com_graphaware_module_ES_port:=9243}
 : ${NEO4J_com_graphaware_module_ES_protocol:=https}
-: ${NEO4J_com_graphaware_module_ES_index:=neo4j-index}
 : ${NEO4J_com_graphaware_module_ES_keyProperty:=uuid}
-: ${NEO4J_com_graphaware_module_ES_node:=hasLabel(\'Capture\')}
+: ${NEO4J_com_graphaware_module_ES_node:=}
 : ${NEO4J_com_graphaware_module_ES_retryOnError:=true}
 : ${NEO4J_com_graphaware_module_ES_queueSize:=2000}
-: ${NEO4J_com_graphaware_module_ES_reindexBatchSize:=500}
+: ${NEO4J_com_graphaware_module_ES_reindexBatchSize:=1000}
 : ${NEO4J_com_graphaware_module_ES_bulk:=true}
-: ${NEO4J_com_graphaware_module_ES_initializeUntil:=1529538950524}
+: ${NEO4J_com_graphaware_module_ES_initializeUntil:=1532559918777}
+: ${NEO4J_com_graphaware_module_ES_mapping:=com.graphaware.module.es.mapping.JsonFileMapping}
+: ${NEO4J_com_graphaware_module_ES_file:=esmapping.json}
 
 if [ -d /conf ]; then
     find /conf -type f -exec cp {} conf \;

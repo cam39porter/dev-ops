@@ -57,6 +57,7 @@ WORKDIR /var/lib/neo4j
 VOLUME /data
 
 COPY docker-entrypoint.sh /docker-entrypoint.sh
+COPY esmapping.json /esmapping.json
 
 EXPOSE 7474 7473 7687
 

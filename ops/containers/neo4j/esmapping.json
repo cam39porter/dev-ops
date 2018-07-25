@@ -1,0 +1,21 @@
+{
+  "defaults": {
+    "key_property": "uuid",
+    "nodes_index": "neo4j-index-v2-node",
+    "relationships_index": "neo4j-index-v2-relationship",
+    "include_remaining_properties": true
+  },
+  "node_mappings": [
+    {
+      "condition": "hasLabel('Capture')",
+      "index": "neo4j-index-capture",
+      "type": "Capture"
+    },
+    {
+      "condition": "hasLabel('Session')",
+      "index": "neo4j-index-session",
+      "type": "Session"
+    }
+  ],
+  "relationship_mappings": []
+}
