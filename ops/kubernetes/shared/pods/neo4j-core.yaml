@@ -20,7 +20,7 @@ spec:
           secretName: neo4j-cluster
       containers:
       - name: neo4j
-        image: "gcr.io/opit-193719/neo4j-image:b14e90f0176a10c6c4c0ef401acd787e518cf926"
+        image: "gcr.io/opit-193719/neo4j-image:4881602282a8c812d64e847a2893ca57dee3ffb8"
         imagePullPolicy: "Always"
         env:
           - name: NEO4J_dbms_mode
@@ -34,7 +34,7 @@ spec:
           - name: NEO4J_ACCEPT_LICENSE_AGREEMENT
             value: "yes"
           - name: NEO4J_com_graphaware_module_ES_initializeUntil
-            value: 1532565186255
+            value: "1532565186255"
           - name: NEO4J_com_graphaware_module_ES_uri
             valueFrom:
               secretKeyRef:
